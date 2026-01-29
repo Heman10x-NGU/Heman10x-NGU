@@ -2,7 +2,7 @@
 
 Backend / distributed systems engineer at **Bank of New York Mellon** building high-throughput event pipelines and reliable workflow-driven services (Kafka, gRPC, Redis, Temporal).
 
-I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability — and build side-projects around **distributed caches**, **task queues**, and **real-time AI agents**.
+I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability, **concurrent systems** — and build side-projects around **distributed caches**, **task queues**, and **real-time AI agents**.
 
 Currently exploring: storage systems, real-time architectures, LLM integrations with strict structured outputs.
 
@@ -15,14 +15,14 @@ Currently exploring: storage systems, real-time architectures, LLM integrations 
 High-performance distributed caching system with **etcd service discovery**, **gRPC** communication, **consistent hashing**, and **Prometheus monitoring**.
 
 - **23,400 ops/sec** with sub-1ms P50 latency (macOS M4)
-- Singleflight request deduplication, LRU eviction, TTL with jitter
+- **Thread-safe** LRU cache with singleflight deduplication and **concurrent access**
 - Hot data replication across nodes
 
 ### [TitanQueue](https://github.com/Heman10x-NGU/TitanQueue) — Distributed Task Queue in Go
 
 Production-ready task queue with **Redis**, designed for reliability through **at-least-once delivery**.
 
-- Lease-based task ownership with automatic recovery for failed workers
+- **Concurrent worker pool** with lease-based ownership and automatic recovery
 - Priority queues, retry with exponential backoff, graceful shutdown
 - Built-in Web UI dashboard for monitoring
 
@@ -42,7 +42,7 @@ Voice-controlled AI agent that turns speech into system diagrams in real-time.
 
 **Systems & infra:** Kafka · gRPC · Redis · etcd · Temporal · Postgres · Elasticsearch · Docker
 
-**Patterns:** Consistent hashing · Singleflight · At-least-once delivery · Lease-based ownership · Exponential backoff
+**Patterns:** Consistent hashing · Singleflight · At-least-once delivery · Lease-based ownership · Exponential backoff · Goroutines · Worker pools · Thread-safe data structures
 
 ---
 
