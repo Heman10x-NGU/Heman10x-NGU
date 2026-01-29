@@ -46,6 +46,10 @@ Voice-controlled AI agent that turns speech into system diagrams in real-time.
 
 ---
 
+**Building AI infra or real-time systems? [Let's talk](https://www.linkedin.com/in/heman10x/).**
+
+---
+
 ## Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/heman10x/) [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:heman10x@gmail.com)
