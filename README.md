@@ -4,7 +4,7 @@ Backend / distributed systems engineer at **Bank of New York Mellon** building h
 
 I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability, **concurrent systems** — and build side-projects around **distributed caches**, **task queues**, **developer tools**, and **real-time AI agents**.
 
-Currently exploring: storage systems, real-time architectures, LLM integrations with strict structured outputs.
+Currently exploring: storage systems, real-time architectures, MCP server development, and LLM integrations with strict structured outputs.
 
 ---
 
@@ -17,6 +17,14 @@ Static + dynamic analysis tool that finds goroutine leaks, deadlocks, and lock b
 - **94% accuracy on GoBench GoKer** — 64/68 real production bugs detected (Kubernetes, etcd, CockroachDB, gRPC, Docker)
 - **0 false positives** on `net/http/httptest` with 224 goroutines
 - Goroutine provenance tree, Tarjan's SCC N-way deadlock detection, go/ssa static analysis, CI baseline flags
+
+### [PhronAi](https://github.com/Heman10x-NGU/PhronAi) — Voice-Powered AI Diagramming
+
+Voice-controlled AI agent that turns speech into system diagrams in real-time.
+
+- Django + React + Groq LLaMA 3.3 + Deepgram
+- **Zero hallucination** via Pydantic schema validation + Instructor
+- ~4s end-to-end latency, 95%+ transcription accuracy
 
 ### [prelaunch-mcp](https://github.com/Heman10x-NGU/prelaunch-mcp) — Startup Idea Validator for AI Agents
 
@@ -42,14 +50,6 @@ Production-ready task queue with **Redis**, designed for reliability through **a
 - Priority queues, retry with exponential backoff, graceful shutdown
 - Built-in Web UI dashboard for monitoring
 
-### [PhronAi](https://github.com/Heman10x-NGU/PhronAi) — Voice-Powered AI Diagramming
-
-Voice-controlled AI agent that turns speech into system diagrams in real-time.
-
-- Django + React + Groq LLaMA 3.3 + Deepgram
-- **Zero hallucination** via Pydantic schema validation + Instructor
-- ~4s end-to-end latency, 95%+ transcription accuracy
-
 ---
 
 ## Tech Stack
@@ -57,6 +57,8 @@ Voice-controlled AI agent that turns speech into system diagrams in real-time.
 **Languages:** Go · Java · Python · C++ · TypeScript
 
 **Systems & infra:** Kafka · gRPC · Redis · etcd · Temporal · Postgres · Elasticsearch · Docker
+
+**AI & LLM:** Claude API · Groq LLaMA · Deepgram · Instructor · Pydantic · MCP
 
 **Patterns:** Consistent hashing · Singleflight · At-least-once delivery · Lease-based ownership · Exponential backoff · Goroutines · Worker pools · Thread-safe data structures
 
