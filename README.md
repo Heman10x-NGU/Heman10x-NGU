@@ -2,13 +2,29 @@
 
 Backend / distributed systems engineer at **Bank of New York Mellon** building high-throughput event pipelines and reliable workflow-driven services (Kafka, gRPC, Redis, Temporal).
 
-I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability, **concurrent systems** — and build side-projects around **distributed caches**, **task queues**, and **real-time AI agents**.
+I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability, **concurrent systems** — and build side-projects around **distributed caches**, **task queues**, **developer tools**, and **real-time AI agents**.
 
 Currently exploring: storage systems, real-time architectures, LLM integrations with strict structured outputs.
 
 ---
 
 ## Featured Projects
+
+### [ThreadGraph](https://github.com/Heman10x-NGU/threadgraph) — Goroutine Leak & Deadlock Detector for Go
+
+Static + dynamic analysis tool that finds goroutine leaks, deadlocks, and lock bugs in Go programs using execution traces — no instrumentation or code changes needed.
+
+- **94% accuracy on GoBench GoKer** — 64/68 real production bugs detected (Kubernetes, etcd, CockroachDB, gRPC, Docker)
+- **0 false positives** on `net/http/httptest` with 224 goroutines
+- Goroutine provenance tree, Tarjan's SCC N-way deadlock detection, go/ssa static analysis, CI baseline flags
+
+### [prelaunch-mcp](https://github.com/Heman10x-NGU/prelaunch-mcp) — Startup Idea Validator for AI Agents
+
+MCP server that gives AI agents (Claude Code, Cursor, Windsurf) a pre-build reality check — scans 6 sources with LLM-powered intent parsing before you write a line of code.
+
+- Scans **GitHub, HN, npm, PyPI, Reddit, Google/DDG** in parallel
+- Outputs `competition_score` + `demand_score` + gap analysis with dynamic insights
+- Drop-in for any MCP-compatible client: `claude mcp add prelaunch -- uvx prelaunch-mcp`
 
 ### [NexusCache](https://github.com/Heman10x-NGU/NexusCache) — Distributed Cache in Go
 
