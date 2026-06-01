@@ -1,54 +1,66 @@
 # Hey, I'm Hemant
 
-Backend / distributed systems engineer at **Bank of New York Mellon** building high-throughput event pipelines and reliable workflow-driven services (Kafka, gRPC, Redis, Temporal).
+Backend / distributed systems engineer at **BNY Mellon**, working on high-throughput event pipelines, financial data systems, and reliable workflow-driven services.
 
-I solve performance + reliability problems — low-latency APIs, idempotency, retries, observability, **concurrent systems** — and build side-projects around **distributed caches**, **task queues**, **developer tools**, and **real-time AI agents**.
+I build around three themes:
 
-Currently exploring: storage systems, real-time architectures, MCP server development, and LLM integrations with strict structured outputs.
+- **LLM reliability and agent guardrails** - evals, calibration, logprobs, structured outputs, MCP-style workflows
+- **Distributed systems and backend infrastructure** - Kafka, gRPC, Redis, queues, caches, concurrency, observability
+- **Developer tools** - small, practical tools that help engineers validate, debug, or ship faster
+
+Currently exploring: LLM evaluation, hallucination risk scoring, agent preflight checks, MCP integrations, and production-grade distributed systems.
 
 ---
 
 ## Featured Projects
 
-### [ThreadGraph](https://github.com/Heman10x-NGU/threadgraph) — Goroutine Leak & Deadlock Detector for Go
+### [Hallucination Sentinel](https://github.com/Heman10x-NGU/hallucination-sentinel) - LLM Output Risk Scoring
 
-Static + dynamic analysis tool that finds goroutine leaks, deadlocks, and lock bugs in Go programs using execution traces — no instrumentation or code changes needed.
+Open-source Python toolkit that scores LLM output risk using calibrated token entropy. It implements the Calibrated Entropy Score (CES) method from arXiv:2605.28264 and is designed for developers building RAG, agent, and batch QA systems.
 
-- **94% accuracy on GoBench GoKer** — 64/68 real production bugs detected (Kubernetes, etcd, CockroachDB, gRPC, Docker)
-- **0 false positives** on `net/http/httptest` with 224 goroutines
-- Goroutine provenance tree, Tarjan's SCC N-way deadlock detection, go/ssa static analysis, CI baseline flags
+- CLI + Python API for scoring entropy sequences and provider outputs
+- Calibration workflow, thresholding, evaluation harness, and provider logprob smoke tests
+- Agent/RAG guardrail examples with clear limitations: this is a risk signal, not a truth oracle
 
-### [PhronAi](https://github.com/Heman10x-NGU/PhronAi) — Voice-Powered AI Diagramming
+### [ThreadGraph](https://github.com/Heman10x-NGU/threadgraph) - Goroutine Leak & Deadlock Detector for Go
 
-Voice-controlled AI agent that turns speech into system diagrams in real-time.
+Static + dynamic analysis tool for finding goroutine leaks, deadlocks, and lock bugs in Go programs using execution traces.
 
-- Django + React + Groq LLaMA 3.3 + Deepgram
-- **Zero hallucination** via Pydantic schema validation + Instructor
-- ~4s end-to-end latency, 95%+ transcription accuracy
+- Detects goroutine leaks and deadlock patterns without application instrumentation
+- Goroutine provenance tree, Tarjan SCC deadlock detection, go/ssa static analysis, CI baseline flags
+- Built for debugging real concurrency failures, not just toy examples
 
-### [prelaunch-mcp](https://github.com/Heman10x-NGU/prelaunch-mcp) — Startup Idea Validator for AI Agents
+### [NexusCache](https://github.com/Heman10x-NGU/NexusCache) - Distributed Cache in Go
 
-MCP server that gives AI agents (Claude Code, Cursor, Windsurf) a pre-build reality check — scans 6 sources with LLM-powered intent parsing before you write a line of code.
+Distributed caching system with etcd service discovery, gRPC communication, consistent hashing, singleflight deduplication, and Prometheus monitoring.
 
-- Scans **GitHub, HN, npm, PyPI, Reddit, Google/DDG** in parallel
-- Outputs `competition_score` + `demand_score` + gap analysis with dynamic insights
-- Drop-in for any MCP-compatible client: `claude mcp add prelaunch -- uvx prelaunch-mcp`
+- Thread-safe LRU cache with concurrent access
+- Consistent hashing and hot data replication across nodes
+- Benchmarked locally at 23K+ ops/sec with sub-1ms P50 latency
 
-### [NexusCache](https://github.com/Heman10x-NGU/NexusCache) — Distributed Cache in Go
+### [TitanQueue](https://github.com/Heman10x-NGU/TitanQueue) - Distributed Task Queue in Go
 
-High-performance distributed caching system with **etcd service discovery**, **gRPC** communication, **consistent hashing**, and **Prometheus monitoring**.
+Task queue built with Redis and Go, designed around reliability and at-least-once delivery semantics.
 
-- **23,400 ops/sec** with sub-1ms P50 latency (macOS M4)
-- **Thread-safe** LRU cache with singleflight deduplication and **concurrent access**
-- Hot data replication across nodes
+- Concurrent worker pool with lease-based ownership and automatic recovery
+- Priority queues, retries with exponential backoff, graceful shutdown
+- Web dashboard for queue and worker monitoring
 
-### [TitanQueue](https://github.com/Heman10x-NGU/TitanQueue) — Distributed Task Queue in Go
+### [PhronAi](https://github.com/Heman10x-NGU/PhronAi) - Voice-Powered AI Diagramming
 
-Production-ready task queue with **Redis**, designed for reliability through **at-least-once delivery**.
+Voice-controlled AI diagramming app that turns spoken architecture descriptions into system diagrams.
 
-- **Concurrent worker pool** with lease-based ownership and automatic recovery
-- Priority queues, retry with exponential backoff, graceful shutdown
-- Built-in Web UI dashboard for monitoring
+- Django + React + Groq + Deepgram
+- Structured output validation with Pydantic / Instructor
+- Built around real-time AI workflow UX, not just chat
+
+### [ListFix](https://github.com/Heman10x-NGU/listfix) - Marketplace Listing Optimizer
+
+Open-source tool for improving Facebook Marketplace listings from raw item descriptions.
+
+- Generates clearer titles, descriptions, and pricing suggestions
+- Practical AI utility for sellers and resellers
+- Small product-shaped project focused on immediate usefulness
 
 ---
 
@@ -58,13 +70,13 @@ Production-ready task queue with **Redis**, designed for reliability through **a
 
 **Systems & infra:** Kafka · gRPC · Redis · etcd · Temporal · Postgres · Elasticsearch · Docker
 
-**AI & LLM:** Claude API · Groq LLaMA · Deepgram · Instructor · Pydantic · MCP
+**AI & LLM:** OpenAI · Claude · Groq · Deepgram · Instructor · Pydantic · MCP · evals · logprobs
 
-**Patterns:** Consistent hashing · Singleflight · At-least-once delivery · Lease-based ownership · Exponential backoff · Goroutines · Worker pools · Thread-safe data structures
+**Patterns:** Consistent hashing · Singleflight · At-least-once delivery · Lease-based ownership · Exponential backoff · Goroutines · Worker pools · Structured outputs
 
 ---
 
-**Building AI infra or real-time systems? [Let's talk](https://www.linkedin.com/in/heman10x/).**
+**Building LLM reliability tools, AI agents, or real-time backend systems? [Let's talk](https://www.linkedin.com/in/heman10x/).**
 
 ---
 
