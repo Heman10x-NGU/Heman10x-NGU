@@ -7,7 +7,7 @@ publish the measurements — including the ones that came out negative.
 At **BNY Mellon** (Applied AI Engineer, 2024–present) I ship RAG assistants, agentic workflows,
 MCP servers, and evaluation harnesses on a Python/Go distributed-systems foundation.
 
-**[→ Interactive portfolio](https://heman10x-ngu.github.io/)** · <heman10x@gmail.com>
+**[→ Interactive portfolio](https://heman10x-ngu.github.io/)** · **[Hugging Face](https://huggingface.co/heman10x)** · <heman10x@gmail.com>
 
 Open to **remote** roles: *Applied AI Engineer ·  Fullstack AI Engineer · Forward Deployed Engineer ·
 Inference / Model Performance Engineer.* Based in India, 4–6h overlap with EU and US-East.
@@ -19,6 +19,21 @@ Inference / Model Performance Engineer.* Based in India, 4–6h overlap with EU 
 ---
 
 ## Featured
+
+### [openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) — calibrated 151M decision engine (305★ · [200K+ HF downloads](https://huggingface.co/heman10x/rlcd-modernbert-151m))
+`post-training` · `fine-tuning` · `calibration` · `ModernBERT` · `WebGPU`
+
+Non-autoregressive decision model post-trained from **ModernBERT-base (149.6M)** with
+symmetric KL-divergence penalties against option-order bias and an out-of-fold calibrated
+confidence head, plus an in-browser WebGPU playground ([Verdict-open-jev](https://github.com/Heman10x-NGU/Verdict-open-jev), 119★).
+Public checkpoint: [heman10x/rlcd-modernbert-151m](https://huggingface.co/heman10x/rlcd-modernbert-151m).
+
+> **77.10% accuracy** on 2,000 held-out `LocalLLaMA/typed-decisions` tasks (beating 421M Laya at
+> 76.60% and TypeSafe Jev at 72.70%) · **0.0636 Brier score** · **1.44% ECE** · **200,101
+> all-time Hugging Face downloads** (151,910 in the last 30 days) · fine-tuned in **8.8 hours on
+> a single GTX 1660 Ti (6 GB VRAM)**.
+
+---
 
 ### [nanoserve](https://github.com/Heman10x-NGU/nanoserve) — LLM inference engine
 `inference optimization` · `model serving` · `KV cache` · `continuous batching` · `latency optimization`
